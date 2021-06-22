@@ -12,11 +12,11 @@ function ProductItem(props) {
   };
 
   return (
-    <div class="card">
-      <div class="images">
+    <div className="card">
+      <div className="images">
         <img src={props.image} />
       </div>
-      <div class="product">
+      <div className="product">
         <p>{props.category}</p>
         <h1>{props.name}</h1>
         <h4>Available:{props.quantity}</h4>

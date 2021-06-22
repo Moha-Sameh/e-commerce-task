@@ -20,7 +20,7 @@ const CartList = () => {
     </div>
   ) : (
     <div className="shopping-cart">
-      <div class="title">Shopping Bag</div>
+      <div className="title">Shopping Bag</div>
       {items.map((item) => {
         const itemTotal = item.quantity * item.price;
         return (
@@ -58,7 +58,7 @@ const CartList = () => {
           </div>
         );
       })}
-      <div class="title">
+      <div className="title">
         <span>Total amount: </span>
         <span>{cartTotal} USD</span>
         <button
