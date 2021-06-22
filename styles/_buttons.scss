@@ -1,0 +1,37 @@
+%btn {
+  border-style: none;
+  display: inline-block;
+  padding: 8px 20px;
+  margin: 3px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+.btn-primary {
+  @extend %btn;
+  @include set-background(lighten($blue, 10%));
+}
+
+.btn-secondary {
+  @extend %btn;
+  @include set-background($alert-color);
+}
+
+.btn-disabled {
+  @extend %btn;
+}
+
+.btn-add {
+  @extend %btn;
+  @include set-background($success-color);
+}
+
+.btn-decrease {
+  @extend %btn;
+  @include set-background($warning-color);
+}

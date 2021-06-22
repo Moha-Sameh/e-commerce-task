@@ -1,0 +1,36 @@
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-content: $align;
+}
+//Screen adjustment
+$smartphone: 480px;
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+@mixin respondTo($media) {
+  @if $media == 480px {
+    @media (max-width: $smartphone) {
+      @content;
+    }
+  } @else if $media == 767px {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) {
+      @content;
+    }
+  } @else if $media == 1174px {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $media == 1400px {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  overflow: auto;
+}

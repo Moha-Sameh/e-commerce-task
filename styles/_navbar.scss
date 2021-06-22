@@ -1,0 +1,18 @@
+header {
+  @include flex(space-between, center);
+  font-family: $header-font-family;
+  font-size: $l-font-size;
+  ul {
+    display: flex;
+    list-style-type: none;
+    grid-gap: 3rem;
+    grid-template-columns: repeat(4, auto);
+    display: grid;
+    li {
+      padding: 15px;
+      &:hover {
+        transition: all 1s ease-out;
+      }
+    }
+  }
+}

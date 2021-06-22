@@ -1,0 +1,14 @@
+@import "config";
+@import "buttons";
+@import "utilities";
+@import "theme";
+@import "navbar";
+@import "product";
+@import "cart";
+.empty {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 4.8%;
+  min-height: 82.3vh;
+}

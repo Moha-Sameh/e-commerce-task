@@ -1,0 +1,72 @@
+//Primary colors palette
+$blue: #0e6cff !default;
+$white: #e4e4e465 !default;
+$black: #000000 !default;
+$gray: #7f7f7f !default;
+//Color use palette
+$alert-color: #f04124;
+$success-color: #43ac6a;
+$warning-color: #f08a24;
+$disabled-color: #a0d2e850;
+//Derivative colors
+$dark-gray: darken($gray, 23.14%) !default;
+$darker-gray: darken($dark-gray, 6.6667%) !default;
+$darkest-gray: darken($dark-gray, 17.25%) !default;
+// Font information
+$header-font-family: "Georgia", "Times New Roman", serif;
+$default-font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+$l-font-size: 21px;
+$m-font-size: 16px;
+$s-font-size: 14px;
+//Paragraph
+h2 {
+  color: tan;
+}
+a {
+  text-decoration: none;
+  color: set-text-color($blue);
+  &:hover {
+    color: $success-color;
+  }
+}
+// Z-index variable
+$starting-zindex: 1000;
+$zindex-modal-backdrop: $starting-zindex * 3;
+$zindex-modal: $zindex-modal-backdrop + 1;
+// Responsive
+$small-screen-min-width: 320px;
+$small-screen-max-width: 568px;
+$medium-screen-min-width: 768px;
+$medium-screen-max-width: 1024px;
+$large-screen-min-width: 1824px;
+// Margin & padding classes
+$spaceamounts: (1, 2, 3, 4, 5);
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
+// Set background & text color
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
