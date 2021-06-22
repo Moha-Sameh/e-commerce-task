@@ -92,6 +92,14 @@
   }
 }
 
+.empty {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 4.8%;
+  min-height: 82.3vh;
+}
+
 /* media queries */
 @media (max-width: 800px) {
   .shopping-cart {
