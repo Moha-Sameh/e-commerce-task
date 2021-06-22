@@ -24,7 +24,7 @@ const CartList = () => {
       {items.map((item) => {
         const itemTotal = item.quantity * item.price;
         return (
-          <div>
+          <div key={item.id}>
             <div className="item">
               <div className="buttons">
                 <button
@@ -45,7 +45,7 @@ const CartList = () => {
                 >
                   &#8210;
                 </button>
-                <input type="text" value={item.quantity} />
+                <input type="text" readOnly value={item.quantity} />
                 <button
                   onClick={() => incrementItemQuantity(item)}
                   className="btn-add"
