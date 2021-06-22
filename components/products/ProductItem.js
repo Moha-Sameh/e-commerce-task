@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { useCart } from "react-use-cart";
 
 function ProductItem(props) {
   const { addItem } = useCart();
+
+  const [quantity, setQuantity] = useState(props.quantity);
+
   const addToCart = () => {
     addItem({
       id: props.id,
@@ -9,6 +13,7 @@ function ProductItem(props) {
       name: props.name,
       brand: props.category,
     });
+    setQuantity(quantity - 1);
   };
 
   return (
@@ -19,7 +24,7 @@ function ProductItem(props) {
       <div className="product">
         <p>{props.category}</p>
         <h1>{props.name}</h1>
-        <h4>Available:{props.quantity}</h4>
+        <h4>Available:{quantity}</h4>
         <h2>${props.price}</h2>
         <div>
           <button
